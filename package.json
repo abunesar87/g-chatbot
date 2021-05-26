@@ -1,0 +1,78 @@
+{
+  "name": "@abunesar87/g-chatbot",
+  "version": "0.1.10",
+  "scripts": {
+    "serve": "vue-cli-service serve",
+		"build": "npm run clean:lib && npm run build:lib && npm run build:lib && npm run build:wc",
+		"clean:lib": "rimraf dist",
+		"build:lib": "vue-cli-service build --target lib --no-clean --name g-chatbot ./src/components/index.js",
+		"build:esm": "vue-cli-service build --target lib --no-clean --name g-chatbot --formats esm ./src/components/index.js",
+		"build:wc": "vue-cli-service build --target wc --no-clean --name g-chatbot ./src/components/ChatForm.vue",
+		"prepublish": "npm run lint && npm run build",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "@chenfengyuan/vue-carousel": "^1.0.6",
+    "@vue/compiler-sfc": "^3.0.11",
+    "axios": "^0.21.1",
+    "core-js": "^3.6.5",
+    "moment": "^2.29.1",
+    "swiper": "^6.0.0",
+    "vue": "^2.6.12",
+    "vue-awesome-swiper": "^4.1.1",
+    "vue-chat-scroll": "^1.4.0",
+    "vue-uuid": "^2.0.2"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss7-compat": "^2.1.0",
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "autoprefixer": "^9.8.6",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.7.2",
+    "eslint-plugin-vue": "^6.2.2",
+    "postcss": "^7.0.35",
+    "sass-loader": "^10",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.1.0",
+    "vue-template-compiler": "^2.6.11"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "parserOptions": {
+      "parser": "babel-eslint"
+    },
+    "rules": {}
+  },
+  "repository": {
+    "url": "git://github.com/abunesar87/g-chatbot.git"
+  },
+  "files": [
+		"dist/*"
+	],
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ],
+  "description": "## Project setup ``` npm install ```",
+  "bugs": {
+    "url": "https://github.com/abunesar87/g-chatbot/issues"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/@abunesar87"
+  },
+  "homepage": "https://github.com/abunesar87/g-chatbot#readme",
+  "main": "dist/g-chatbot.umd.js",
+  "unpkg": "dist/g-chatbot.min.js",
+  "jsdelivr": "dist/g-chatbot.min.js",
+  "author": "abunesar87",
+  "license": "ISC"
+}
